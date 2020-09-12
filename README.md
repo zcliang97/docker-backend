@@ -27,6 +27,15 @@ Password is `docker`, this can be changed on line 27 in the Dockerfile.
 
 6. Can now execute queries in the psql interface. Example below:
 <pre><code>docker=# \l;
+   Name    |  Owner   | Encoding | Collate |  Ctype  |   Access privileges   
+-----------+----------+----------+---------+---------+-----------------------
+ docker    | docker   | UTF8     | C.UTF-8 | C.UTF-8 | 
+ postgres  | postgres | UTF8     | C.UTF-8 | C.UTF-8 | 
+ template0 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+ template1 | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+           |          |          |         |         | postgres=CTc/postgres
+(4 rows)
 docker=# CREATE DATABASE hackathon;
 docker=# CREATE SCHEMA users;
 docker=# CREATE TABLE users.users (
